@@ -37,7 +37,7 @@ def main(out_file):
     with open(out_file, 'w') as generated_file:
         template = template_environment.get_template(os.path.basename(template_file))
         data = template.render({'words': word_list.words})
-        generated_file.write(data)
+        generated_file.write(str(data.encode('utf-8')))
 
 
 if __name__ == '__main__':

@@ -97,8 +97,8 @@ class WordsList(object):
                 r = requests.get(self.__api_url, params={'headword': word})
                 print(r.url)
                 with open(info_file, 'w') as data_file:
-                    data_file.write(r.text.encode('utf-8'))
-                time.sleep(2)
+                    data_file.write(str(r.text.encode('utf-8')))
+                time.sleep(1)
             except Exception as ex:
                 print(word)
                 print(str(ex))
